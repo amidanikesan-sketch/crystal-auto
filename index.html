@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Auto | Химчистка и детейлинг салона автомобиля в Златоусте</title>
+  <meta name="description" content="Профессиональная химчистка салона автомобиля в Златоусте. Сиденья, потолок, кожа, удаление запахов. Гарантия результата. Запись: 8 919 123-45-67">
+  <meta property="og:title" content="Crystal Auto | Химчистка салона авто в Златоусте">
+  <meta property="og:description" content="Возвращаем салону чистоту, цвет и запах нового авто. Запись онлайн или по телефону 8 919 123-45-67.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#04060a">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "Crystal Auto",
+    "description": "Химчистка и детейлинг салона автомобиля в Златоусте",
+    "telephone": "+79191234567",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Златоуст",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 09:00-20:00"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#hero" aria-label="Crystal Auto, на главную">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M8 4h16l6 8-14 16L2 12l6-8z" stroke="url(#lgA)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M2 12h28M8 4l4 8 4-8 4 8 4-8M12 12l4 16 4-16" stroke="url(#lgA)" stroke-width="1" stroke-linejoin="round" opacity=".7"/>
+          <defs>
+            <linearGradient id="lgA" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7db5ff"/><stop offset="1" stop-color="#2f6fe0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">Crystal&nbsp;Auto</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <a class="nav__link" href="#services">Услуги</a>
+        <a class="nav__link" href="#price">Прайс</a>
+        <a class="nav__link" href="#process">Как мы работаем</a>
+        <a class="nav__link" href="#reviews">Отзывы</a>
+        <a class="nav__link" href="#booking">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+79191234567">8&nbsp;919&nbsp;123-45-67</a>
+        <a class="btn btn--primary btn--sm" href="#booking">Записаться</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero" id="hero">
+      <canvas class="hero__particles" id="particles" aria-hidden="true"></canvas>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Детейлинг-студия в Златоусте</p>
+          <h1 class="hero__title">Глубокая химчистка салона вашего авто</h1>
+          <p class="hero__subtitle">Возвращаем салону чистоту, цвет и запах нового автомобиля. Профессиональная химия, бережная работа с каждым материалом.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#booking">Записаться</a>
+            <a class="btn btn--ghost" href="#price">Смотреть прайс</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="crystal">
+            <svg class="crystal__svg" viewBox="0 0 360 360" fill="none">
+              <g class="crystal__body">
+                <path d="M110 70h140l70 90-150 150L20 160l90-90z" stroke="url(#cg1)" stroke-width="2" stroke-linejoin="round" fill="rgba(61,139,255,0.04)"/>
+                <path d="M20 160h320" stroke="url(#cg2)" stroke-width="1.2" opacity=".8"/>
+                <path d="M110 70l40 90 30-90 30 90 40-90" stroke="url(#cg2)" stroke-width="1.2" opacity=".65"/>
+                <path d="M60 160l110 150 10-150 10 150 110-150" stroke="url(#cg2)" stroke-width="1.2" opacity=".5"/>
+                <path d="M150 160l30 150 30-150" stroke="url(#cg2)" stroke-width="1.2" opacity=".4"/>
+              </g>
+              <defs>
+                <linearGradient id="cg1" x1="20" y1="70" x2="340" y2="310" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#8fc0ff"/><stop offset=".5" stop-color="#3d8bff"/><stop offset="1" stop-color="#1d4fa8"/>
+                </linearGradient>
+                <linearGradient id="cg2" x1="20" y1="70" x2="340" y2="310" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#bcd9ff"/><stop offset="1" stop-color="#2f6fe0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="crystal__glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЦИФРЫ -->
+    <!-- Значения примерные, заменить на реальные данные студии -->
+    <section class="stats" aria-label="Crystal Auto в цифрах">
+      <div class="container stats__grid reveal">
+        <div class="stats__item">
+          <span class="stats__num">6 лет</span>
+          <span class="stats__label">работаем с салонами авто</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">900+</span>
+          <span class="stats__label">автомобилей очищено</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">8-12 ч</span>
+          <span class="stats__label">полная сушка после чистки</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__num">30 дней</span>
+          <span class="stats__label">гарантия на результат</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Услуги студии</h2>
+          <p class="section__lead">От локальной чистки сидений до полного восстановления интерьера.</p>
+        </div>
+
+        <div class="bento">
+          <article class="bento__card bento__card--main reveal" data-spotlight>
+            <div class="bento__visual" aria-hidden="true">
+              <svg viewBox="0 0 120 120" fill="none">
+                <path d="M37 23h46l24 30-47 50-47-50 24-30z" stroke="url(#bg1)" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M13 53h94M37 23l13 30 10-30 10 30 13-30M37 53l23 50 23-50" stroke="url(#bg1)" stroke-width="1" opacity=".55"/>
+                <defs><linearGradient id="bg1" x1="13" y1="23" x2="107" y2="103" gradientUnits="userSpaceOnUse"><stop stop-color="#9cc6ff"/><stop offset="1" stop-color="#2f6fe0"/></linearGradient></defs>
+              </svg>
+            </div>
+            <h3 class="bento__title">Комплексная химчистка салона</h3>
+            <p class="bento__text">Полная чистка всех поверхностей: сиденья, потолок, пол, двери, пластик, стёкла изнутри. Экстракция влаги и сушка. Салон выглядит и пахнет как новый.</p>
+            <a class="bento__link" href="#price">К прайсу</a>
+          </article>
+
+          <article class="bento__card reveal" data-spotlight>
+            <h3 class="bento__title">Сиденья и текстиль</h3>
+            <p class="bento__text">Удаляем пятна от кофе, еды и следы эксплуатации из ткани и велюра.</p>
+          </article>
+
+          <article class="bento__card reveal" data-spotlight>
+            <h3 class="bento__title">Потолок</h3>
+            <p class="bento__text">Деликатная чистка без разводов и провисания обшивки.</p>
+          </article>
+
+          <article class="bento__card bento__card--tint reveal" data-spotlight>
+            <h3 class="bento__title">Кожаный салон</h3>
+            <p class="bento__text">Чистка кожи мягкой химией, питание и защитный кондиционер. Кожа не сохнет и не трескается.</p>
+          </article>
+
+          <article class="bento__card bento__card--glow reveal" data-spotlight>
+            <h3 class="bento__title">Удаление запахов</h3>
+            <p class="bento__text">Озонирование убирает запах табака, животных и сырости на молекулярном уровне.</p>
+          </article>
+
+          <article class="bento__card reveal" data-spotlight>
+            <h3 class="bento__title">Багажник и пластик</h3>
+            <p class="bento__text">Чистка багажника, полировка и чернение пластика, уход за резиновыми уплотнителями.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРАЙС -->
+    <!-- Цены ориентировочные, заменить на реальные после получения прайса студии -->
+    <section class="section section--panel" id="price">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Прайс</h2>
+          <p class="section__lead">Цены ориентировочные. Точную стоимость назовём после осмотра салона, до начала работ.</p>
+        </div>
+
+        <div class="price__tabs reveal" role="tablist" aria-label="Класс автомобиля">
+          <button class="price__tab is-active" role="tab" aria-selected="true" data-class="sedan">Седан, хэтчбек</button>
+          <button class="price__tab" role="tab" aria-selected="false" data-class="cross">Кроссовер</button>
+          <button class="price__tab" role="tab" aria-selected="false" data-class="suv">Внедорожник, минивэн</button>
+        </div>
+
+        <div class="price__grid">
+          <article class="price__card reveal">
+            <h3 class="price__name">Освежение</h3>
+            <p class="price__value">от <span data-price='{"sedan":"2 900","cross":"3 400","suv":"3 900"}'>2 900</span> ₽</p>
+            <ul class="price__list">
+              <li>Тщательный пылесос салона</li>
+              <li>Сухая чистка ткани и пластика</li>
+              <li>Уход за панелью и консолью</li>
+              <li>Стёкла изнутри</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#booking">Записаться</a>
+          </article>
+
+          <article class="price__card price__card--featured reveal">
+            <span class="price__badge">Выбирают чаще всего</span>
+            <h3 class="price__name">Комплекс</h3>
+            <p class="price__value">от <span data-price='{"sedan":"6 900","cross":"7 900","suv":"8 900"}'>6 900</span> ₽</p>
+            <ul class="price__list">
+              <li>Полная химчистка всех поверхностей</li>
+              <li>Сиденья, пол, двери, багажник</li>
+              <li>Потолок без разводов</li>
+              <li>Экстракция влаги и сушка</li>
+              <li>Ароматизация салона</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#booking">Записаться</a>
+          </article>
+
+          <article class="price__card reveal">
+            <h3 class="price__name">Премиум</h3>
+            <p class="price__value">от <span data-price='{"sedan":"10 900","cross":"12 400","suv":"13 900"}'>10 900</span> ₽</p>
+            <ul class="price__list">
+              <li>Всё из пакета «Комплекс»</li>
+              <li>Чистка и кондиционер для кожи</li>
+              <li>Озонирование от запахов</li>
+              <li>Полировка и чернение пластика</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#booking">Записаться</a>
+          </article>
+        </div>
+
+        <div class="price__extra reveal">
+          <h3 class="price__extra-title">Отдельные работы</h3>
+          <div class="price__extra-grid">
+            <div class="price__extra-item"><span>Потолок</span><b>от 1 800 ₽</b></div>
+            <div class="price__extra-item"><span>Сиденье (1 шт.)</span><b>от 900 ₽</b></div>
+            <div class="price__extra-item"><span>Багажник</span><b>от 1 200 ₽</b></div>
+            <div class="price__extra-item"><span>Озонирование</span><b>от 1 500 ₽</b></div>
+            <div class="price__extra-item"><span>Чернение пластика</span><b>от 1 300 ₽</b></div>
+            <div class="price__extra-item"><span>Кожа: чистка и уход</span><b>от 3 900 ₽</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЭТАПЫ -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Как проходит работа</h2>
+          <p class="section__lead">Прозрачный процесс: вы знаете цену и срок до того, как мы начнём.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__step reveal">
+            <h3 class="timeline__title">Осмотр и расчёт</h3>
+            <p class="timeline__text">Осматриваем салон, фиксируем проблемные места, называем точную цену и срок.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <h3 class="timeline__title">Подготовка</h3>
+            <p class="timeline__text">Убираем вещи, демонтируем что нужно, защищаем электронику и разъёмы от влаги.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <h3 class="timeline__title">Глубокая чистка</h3>
+            <p class="timeline__text">Наносим химию по типу материала, вымываем грязь торнадором из всех швов и пор.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <h3 class="timeline__title">Экстракция</h3>
+            <p class="timeline__text">Моющий пылесос вытягивает влагу вместе с остатками химии и грязи.</p>
+          </li>
+          <li class="timeline__step reveal">
+            <h3 class="timeline__title">Сушка и приёмка</h3>
+            <p class="timeline__text">Сушим салон, наносим финишные составы и сдаём авто. Принимаете результат лично.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ПОЧЕМУ МЫ -->
+    <section class="section section--panel section--why" id="why">
+      <div class="container why__inner">
+        <div class="why__content reveal">
+          <h2 class="section__title">Почему Crystal Auto</h2>
+          <ul class="why__list">
+            <li>
+              <h3>Сертифицированная химия</h3>
+              <p>Работаем составами Koch Chemie и GRASS. Безопасно для кожи, ткани, пластика и здоровья.</p>
+            </li>
+            <li>
+              <h3>Профессиональное оборудование</h3>
+              <p>Торнадор, моющий экстрактор и озонатор. То, чего не заменит мойка самообслуживания.</p>
+            </li>
+            <li>
+              <h3>Гарантия результата</h3>
+              <p>30 дней гарантии. Если пятно проявилось снова, переделаем бесплатно.</p>
+            </li>
+            <li>
+              <h3>Цена и срок заранее</h3>
+              <p>Фиксируем стоимость до начала работ. Никаких доплат на выдаче.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="why__visual reveal" aria-hidden="true">
+          <!-- TODO: заменить на реальное фото студии или оборудования, ~800x1000 -->
+          <div class="why__photo">
+            <svg viewBox="0 0 200 200" fill="none">
+              <path d="M62 38h76l40 50-78 84-78-84 40-50z" stroke="url(#wg1)" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M22 88h156M62 38l22 50 16-50 16 50 22-50M62 88l38 84 38-84" stroke="url(#wg1)" stroke-width="0.9" opacity=".5"/>
+              <defs><linearGradient id="wg1" x1="22" y1="38" x2="178" y2="172" gradientUnits="userSpaceOnUse"><stop stop-color="#9cc6ff"/><stop offset="1" stop-color="#2456b3"/></linearGradient></defs>
+            </svg>
+            <p>Здесь будет фото вашей студии и оборудования</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <!-- Примеры отзывов, заменить реальными -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Отзывы клиентов</p>
+          <h2 class="section__title">Что говорят владельцы</h2>
+        </div>
+
+        <div class="reviews__grid">
+          <figure class="review reveal">
+            <blockquote class="review__text">«Дети уделали весь задний диван соком и шоколадом. Забрал машину, как будто вчера из салона. Запаха химии нет вообще.»</blockquote>
+            <figcaption class="review__author"><b>Дмитрий</b><span>Kia Sportage</span></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <blockquote class="review__text">«Брала комплекс перед продажей машины. Покупатель даже не торговался: салон выглядел лучше, чем у новых в автосалоне.»</blockquote>
+            <figcaption class="review__author"><b>Алёна</b><span>Volkswagen Polo</span></figcaption>
+          </figure>
+          <figure class="review reveal">
+            <blockquote class="review__text">«Кожа на сиденьях посветлела на два тона, ушёл запах табака. Сделали день в день, как и обещали.»</blockquote>
+            <figcaption class="review__author"><b>Сергей Викторович</b><span>Toyota Land Cruiser</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <h2 class="section__title">Частые вопросы</h2>
+        </div>
+
+        <div class="faq reveal">
+          <details class="faq__item">
+            <summary class="faq__q">Сколько сохнет салон после химчистки?</summary>
+            <p class="faq__a">Обычно 8-12 часов. Мы вытягиваем влагу экстрактором и досушиваем салон, поэтому забрать авто можно в день обращения или на следующее утро.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Реально ли убрать запах табака или животных?</summary>
+            <p class="faq__a">Да. Сначала глубокая чистка убирает источник запаха из обивки, затем озонирование разрушает оставшиеся молекулы запаха. Это не маскировка ароматизатором, запах уходит.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Не повредит ли химия коже и пластику?</summary>
+            <p class="faq__a">Нет. Для каждого материала используем свой состав: мягкую пену для кожи, отдельную химию для ткани и пластика. После чистки кожа получает питающий кондиционер.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Сколько времени занимает химчистка?</summary>
+            <p class="faq__a">Локальные работы от 1 часа. Комплексная химчистка с сушкой занимает от 6 до 12 часов в зависимости от загрязнения и размера салона.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Нужно ли готовить машину заранее?</summary>
+            <p class="faq__a">Нет, достаточно забрать личные вещи и документы. Всё остальное сделаем сами: уберём мусор, демонтируем и установим обратно всё необходимое.</p>
+          </details>
+          <details class="faq__item">
+            <summary class="faq__q">Как записаться и нужна ли предоплата?</summary>
+            <p class="faq__a">Предоплата не нужна. Оставьте заявку на сайте, напишите нам в VK или MAX или позвоните по телефону 8 919 123-45-67. Подберём удобное время в течение дня.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАПИСЬ И КОНТАКТЫ -->
+    <section class="section section--panel" id="booking">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Запись и контакты</h2>
+          <p class="section__lead">Оставьте заявку, и мы подтвердим запись в течение часа в рабочее время.</p>
+        </div>
+
+        <div class="booking__grid">
+          <form class="form reveal" id="bookingForm" novalidate>
+            <div class="form__field">
+              <label class="form__label" for="fName">Ваше имя</label>
+              <input class="form__input" type="text" id="fName" name="name" placeholder="Иван" autocomplete="name" required>
+              <span class="form__error" data-error-for="fName">Укажите имя</span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="fPhone">Телефон</label>
+              <input class="form__input" type="tel" id="fPhone" name="phone" placeholder="+7 900 000-00-00" autocomplete="tel" required>
+              <span class="form__error" data-error-for="fPhone">Укажите телефон в формате +7 900 000-00-00</span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="fCar">Автомобиль</label>
+              <input class="form__input" type="text" id="fCar" name="car" placeholder="Kia Rio, 2019">
+              <span class="form__error" data-error-for="fCar"></span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="fService">Услуга</label>
+              <select class="form__input form__select" id="fService" name="service">
+                <option>Комплексная химчистка</option>
+                <option>Освежение салона</option>
+                <option>Премиум-пакет</option>
+                <option>Сиденья и текстиль</option>
+                <option>Потолок</option>
+                <option>Кожаный салон</option>
+                <option>Удаление запахов</option>
+                <option>Другое / нужна консультация</option>
+              </select>
+            </div>
+            <div class="form__field form__field--full">
+              <label class="form__label" for="fComment">Комментарий <em>(необязательно)</em></label>
+              <textarea class="form__input form__textarea" id="fComment" name="comment" rows="3" placeholder="Например: пятна на заднем диване, запах табака"></textarea>
+            </div>
+
+            <p class="form__hint form__field--full">Заявка откроется в выбранном мессенджере. Текст мы уже подготовим и скопируем, останется его вставить и отправить.</p>
+
+            <div class="form__actions form__field--full">
+              <button class="btn btn--primary" type="submit" data-channel="vk">Отправить в VK</button>
+              <button class="btn btn--ghost" type="submit" data-channel="max">Отправить в MAX</button>
+            </div>
+            <p class="form__alt form__field--full">Или позвоните: <a href="tel:+79191234567">8&nbsp;919&nbsp;123-45-67</a></p>
+          </form>
+
+          <div class="contacts reveal">
+            <div class="map">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=59.650500%2C55.171200&z=14&pt=59.650500,55.171200,pm2blm"
+                title="Crystal Auto на карте Златоуста"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="contacts__info">
+              <div class="contacts__row">
+                <span class="contacts__label">Адрес</span>
+                <span class="contacts__value">Златоуст, точный адрес уточнить</span>
+              </div>
+              <div class="contacts__row">
+                <span class="contacts__label">Режим работы</span>
+                <span class="contacts__value">Ежедневно с 9:00 до 20:00</span>
+              </div>
+              <div class="contacts__row">
+                <span class="contacts__label">Телефон</span>
+                <a class="contacts__value" href="tel:+79191234567">8 919 123-45-67</a>
+              </div>
+              <div class="contacts__row">
+                <span class="contacts__label">Соцсети</span>
+                <span class="contacts__value">
+                  <a href="https://vk.com/crystal.auto74" target="_blank" rel="noopener">VK</a> ·
+                  <!-- TODO: заменить на реальную ссылку MAX -->
+                  <a href="https://max.ru/crystal.auto74" target="_blank" rel="noopener">MAX</a>
+                </span>
+              </div>
+              <a class="btn btn--ghost btn--block contacts__route"
+                 href="https://yandex.ru/maps/?rtext=~55.171200,59.650500&rtt=auto"
+                 target="_blank" rel="noopener">Построить маршрут</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="logo" href="#hero">
+        <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M8 4h16l6 8-14 16L2 12l6-8z" stroke="url(#lgB)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M2 12h28M8 4l4 8 4-8 4 8 4-8M12 12l4 16 4-16" stroke="url(#lgB)" stroke-width="1" stroke-linejoin="round" opacity=".7"/>
+          <defs>
+            <linearGradient id="lgB" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7db5ff"/><stop offset="1" stop-color="#2f6fe0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">Crystal&nbsp;Auto</span>
+      </a>
+      <p class="footer__note">Химчистка и детейлинг салона. Златоуст</p>
+      <div class="footer__links">
+        <a href="tel:+79191234567">8 919 123-45-67</a>
+        <a href="https://vk.com/crystal.auto74" target="_blank" rel="noopener">vk.com/crystal.auto74</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Crystal Auto</p>
+    </div>
+  </footer>
+
+  <!-- МОБИЛЬНАЯ ПАНЕЛЬ БЫСТРЫХ ДЕЙСТВИЙ -->
+  <nav class="quickbar" aria-label="Быстрые действия">
+    <a class="quickbar__btn" href="tel:+79191234567">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Позвонить
+    </a>
+    <a class="quickbar__btn" href="https://vk.me/crystal.auto74" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 6a14 14 0 0 1-5 8l3 5h-3.5l-2.3-3.8A14 14 0 0 1 3 6h3.4a11 11 0 0 0 4.3 6.5V6H14v6a11 11 0 0 0 3.7-6H21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      Написать
+    </a>
+    <a class="quickbar__btn quickbar__btn--accent" href="#booking">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3v3m10-3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm4 9 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Записаться
+    </a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
