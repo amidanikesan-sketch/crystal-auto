@@ -8,10 +8,11 @@
   <meta property="og:title" content="Crystal Auto | Химчистка автомобилей в Златоусте">
   <meta property="og:description" content="Кристальная чистота для вашего авто. Комплексная химчистка салона от 4 000 ₽, гарантия качества. Запись: 8 919 123-45-67.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#04060a">
+  <meta name="theme-color" content="#0b0b0b">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/oswald-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/roboto-mono-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -40,13 +41,10 @@
     <div class="container header__inner">
       <a class="logo" href="#hero" aria-label="Crystal Auto, на главную">
         <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M8 4h16l6 8-14 16L2 12l6-8z" stroke="url(#lgA)" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M2 12h28M8 4l4 8 4-8 4 8 4-8M12 12l4 16 4-16" stroke="url(#lgA)" stroke-width="1" stroke-linejoin="round" opacity=".7"/>
-          <defs>
-            <linearGradient id="lgA" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7db5ff"/><stop offset="1" stop-color="#2f6fe0"/>
-            </linearGradient>
-          </defs>
+          <path d="M16 2 4 13 16 13Z" fill="#ffffff"/>
+          <path d="M16 2 28 13 16 13Z" fill="#cecece"/>
+          <path d="M4 13 16 13 16 30Z" fill="#aab4c2"/>
+          <path d="M28 13 16 13 16 30Z" fill="#4a73a6"/>
         </svg>
         <span class="logo__text">Crystal&nbsp;Auto</span>
       </a>
@@ -74,7 +72,6 @@
 
     <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero" id="hero">
-      <canvas class="hero__particles" id="particles" aria-hidden="true"></canvas>
       <div class="container hero__inner">
         <div class="hero__content reveal">
           <p class="eyebrow">Химчистка автомобилей · Златоуст</p>
@@ -93,8 +90,9 @@
         </div>
         <div class="hero__visual reveal">
           <div class="hero__frame">
-            <img src="assets/img/hero-photo.webp" width="1002" height="564" fetchpriority="high"
-                 alt="Чёрный автомобиль в детейлинг-студии Crystal Auto с неоновой подсветкой">
+            <img class="hero__media" src="assets/img/hero-photo.webp" width="1002" height="626" fetchpriority="high"
+                 alt="Чистое тёмное авто в детейлинг-боксе Crystal Auto под холодным светом">
+            <span class="sweep" aria-hidden="true"></span>
           </div>
           <div class="hero__badge">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3zm-3 9 2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -113,7 +111,7 @@
         </div>
 
         <div class="bento">
-          <article class="bento__card bento__card--main reveal" data-spotlight>
+          <article class="bento__card bento__card--main reveal">
             <div class="bento__visual" aria-hidden="true">
               <svg viewBox="0 0 120 120" fill="none">
                 <path d="M37 23h46l24 30-47 50-47-50 24-30z" stroke="url(#bg1)" stroke-width="1.5" stroke-linejoin="round"/>
@@ -127,43 +125,43 @@
             <a class="bento__link" href="#price">К ценам по классам авто</a>
           </article>
 
-          <article class="bento__card reveal" data-spotlight>
+          <article class="bento__card reveal">
             <h3 class="bento__title">Химчистка сидений</h3>
             <p class="bento__text">Ткань, велюр, алькантара, кожа. Выводим пятна от кофе, еды и следы эксплуатации.</p>
             <p class="bento__price">от 500 ₽ за сиденье</p>
           </article>
 
-          <article class="bento__card reveal" data-spotlight>
+          <article class="bento__card reveal">
             <h3 class="bento__title">Химчистка потолка</h3>
             <p class="bento__text">Деликатная чистка без разводов и провисания обшивки.</p>
             <p class="bento__price">от 1 000 ₽</p>
           </article>
 
-          <article class="bento__card bento__card--tint reveal" data-spotlight>
+          <article class="bento__card bento__card--tint reveal">
             <h3 class="bento__title">Озонация салона</h3>
             <p class="bento__text">Уничтожает запахи табака, животных и сырости на уровне молекул. Не маскировка, а удаление источника.</p>
             <p class="bento__price">от 500 ₽</p>
           </article>
 
-          <article class="bento__card bento__card--glow reveal" data-spotlight>
+          <article class="bento__card bento__card--glow reveal">
             <h3 class="bento__title">Защитная обработка ткани и кожи</h3>
             <p class="bento__text">Гидрофобный слой: салон пачкается медленнее, а уборка проходит быстрее.</p>
             <p class="bento__price">от 1 000 ₽</p>
           </article>
 
-          <article class="bento__card reveal" data-spotlight>
+          <article class="bento__card reveal">
             <h3 class="bento__title">Химчистка дивана, 2 ряда</h3>
             <p class="bento__text">Задний ряд и диваны минивэнов.</p>
             <p class="bento__price">от 1 500 ₽</p>
           </article>
 
-          <article class="bento__card reveal" data-spotlight>
+          <article class="bento__card reveal">
             <h3 class="bento__title">Коврики и ремни безопасности</h3>
             <p class="bento__text">Комплект ковриков от 500 ₽, чистка лент ремней от 300 ₽.</p>
             <p class="bento__price">от 300 ₽</p>
           </article>
 
-          <article class="bento__card reveal" data-spotlight>
+          <article class="bento__card reveal">
             <h3 class="bento__title">Чистка кондиционера</h3>
             <p class="bento__text">Антибактериальная обработка испарителя, свежий воздух без запахов.</p>
             <p class="bento__price">от 1 000 ₽</p>
@@ -490,7 +488,7 @@
           <div class="contacts reveal">
             <div class="map">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=59.679397%2C55.148973&z=13&pt=59.679397,55.148973,pm2blm"
+                src="https://yandex.ru/map-widget/v1/?ll=59.679397%2C55.148973&z=13&theme=dark&pt=59.679397,55.148973,pm2blm"
                 title="Crystal Auto на карте Златоуста"
                 allowfullscreen
                 loading="lazy"></iframe>
@@ -531,13 +529,10 @@
     <div class="container footer__inner">
       <a class="logo" href="#hero">
         <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M8 4h16l6 8-14 16L2 12l6-8z" stroke="url(#lgB)" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M2 12h28M8 4l4 8 4-8 4 8 4-8M12 12l4 16 4-16" stroke="url(#lgB)" stroke-width="1" stroke-linejoin="round" opacity=".7"/>
-          <defs>
-            <linearGradient id="lgB" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#7db5ff"/><stop offset="1" stop-color="#2f6fe0"/>
-            </linearGradient>
-          </defs>
+          <path d="M16 2 4 13 16 13Z" fill="#ffffff"/>
+          <path d="M16 2 28 13 16 13Z" fill="#cecece"/>
+          <path d="M4 13 16 13 16 30Z" fill="#aab4c2"/>
+          <path d="M28 13 16 13 16 30Z" fill="#4a73a6"/>
         </svg>
         <span class="logo__text">Crystal&nbsp;Auto</span>
       </a>

@@ -1,8 +1,11 @@
-/* Crystal Auto: частицы hero, форма записи (класс авто, дата, время,
-   ориентировочная цена), слайдеры до/после, модал отправки в VK/MAX.
+/* Crystal Auto: hero-видео, инерционные слайдеры до/после, форма записи
+   (класс авто, дата, время, ориентировочная цена), модал отправки в VK/MAX.
    Без зависимостей. */
 (function () {
   "use strict";
+
+  /* активный JS: разрешает reveal-анимации (иначе контент виден сразу) */
+  document.documentElement.classList.add("js");
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -26,6 +29,18 @@
   var MONTHS_RU = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
   function fmtRub(n) { return n.toLocaleString("ru-RU") + " ₽"; }
+
+  /* ---------- hero-видео: уважает reduced-motion ---------- */
+  var heroVideo = document.getElementById("heroVideo");
+  if (heroVideo) {
+    if (reducedMotion) {
+      heroVideo.removeAttribute("autoplay");
+      heroVideo.addEventListener("loadedmetadata", function () {
+        try { heroVideo.pause(); } catch (e) {}
+      });
+      try { heroVideo.pause(); } catch (e) {}
+    }
+  }
 
   /* ---------- появление секций при скролле ---------- */
   var revealEls = document.querySelectorAll(".reveal");
@@ -62,17 +77,6 @@
     });
   }
 
-  /* ---------- подсветка границы карточек за курсором ---------- */
-  if (window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll("[data-spotlight]").forEach(function (card) {
-      card.addEventListener("pointermove", function (e) {
-        var r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
-        card.style.setProperty("--my", (e.clientY - r.top) + "px");
-      });
-    });
-  }
-
   /* ---------- toast ---------- */
   var toast = document.getElementById("toast");
   var toastTimer = null;
@@ -86,35 +90,94 @@
     }, 4500);
   }
 
-  /* ---------- слайдеры до/после ---------- */
+  /* ---------- инерционные слайдеры до/после ---------- */
   document.querySelectorAll("[data-ba]").forEach(function (stage) {
     var before = stage.querySelector(".ba__before");
     var divider = stage.querySelector(".ba__divider");
-    var pos = 55;
+    var pos = 55;       // текущее отрисованное положение, %
+    var target = 55;    // целевое положение, %
+    var raf = null;
+    var dragging = false;
+    var lastX = 0, lastT = 0, vel = 0; // скорость для флика
 
-    function apply(p) {
-      pos = Math.min(96, Math.max(4, p));
-      before.style.clipPath = "inset(0 " + (100 - pos) + "% 0 0)";
-      divider.style.left = pos + "%";
-      stage.setAttribute("aria-valuenow", String(Math.round(pos)));
+    function clamp(p) { return Math.min(96, Math.max(4, p)); }
+
+    function paint(p) {
+      before.style.clipPath = "inset(0 " + (100 - p) + "% 0 0)";
+      divider.style.left = p + "%";
+      stage.setAttribute("aria-valuenow", String(Math.round(p)));
     }
 
-    function fromClientX(clientX) {
+    /* мгновенно (клавиатура / reduced-motion) */
+    function set(p) {
+      target = pos = clamp(p);
+      paint(pos);
+    }
+
+    /* плавный ход к target с лёгкой инерцией */
+    function animate() {
+      var diff = target - pos;
+      if (Math.abs(diff) < 0.15 && Math.abs(vel) < 0.02) {
+        pos = target;
+        paint(pos);
+        raf = null;
+        return;
+      }
+      pos += diff * 0.18;        // притяжение к цели
+      paint(pos);
+      raf = requestAnimationFrame(animate);
+    }
+
+    function kick() {
+      if (reducedMotion) { paint(pos = target); return; }
+      if (!raf) raf = requestAnimationFrame(animate);
+    }
+
+    function targetFromX(clientX) {
       var r = stage.getBoundingClientRect();
-      apply(((clientX - r.left) / r.width) * 100);
+      return clamp(((clientX - r.left) / r.width) * 100);
     }
 
     stage.addEventListener("pointerdown", function (e) {
+      dragging = true;
       stage.setPointerCapture(e.pointerId);
-      fromClientX(e.clientX);
+      lastX = e.clientX;
+      lastT = e.timeStamp || performance.now();
+      vel = 0;
+      target = targetFromX(e.clientX);
+      kick();
     });
+
     stage.addEventListener("pointermove", function (e) {
-      if (e.buttons) fromClientX(e.clientX);
+      if (!dragging || !e.buttons) return;
+      var now = e.timeStamp || performance.now();
+      var dt = Math.max(1, now - lastT);
+      var r = stage.getBoundingClientRect();
+      vel = ((e.clientX - lastX) / r.width) * 100 / dt; // % за мс
+      lastX = e.clientX;
+      lastT = now;
+      target = targetFromX(e.clientX);
+      kick();
     });
+
+    function release() {
+      if (!dragging) return;
+      dragging = false;
+      if (!reducedMotion) {
+        // флик: продлеваем по инерции в сторону движения
+        target = clamp(target + vel * 140);
+        kick();
+      }
+    }
+    stage.addEventListener("pointerup", release);
+    stage.addEventListener("pointercancel", release);
+
     stage.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft") { apply(pos - 5); e.preventDefault(); }
-      if (e.key === "ArrowRight") { apply(pos + 5); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { set(pos - 5); e.preventDefault(); }
+      if (e.key === "ArrowRight") { set(pos + 5); e.preventDefault(); }
     });
+
+    paint(pos);
   });
 
   /* ---------- форма записи ---------- */
@@ -343,61 +406,5 @@
     try { done = document.execCommand("copy"); } catch (err) { done = false; }
     document.body.removeChild(ta);
     return done;
-  }
-
-  /* ---------- частицы в hero, как у референса ---------- */
-  var canvas = document.getElementById("particles");
-  if (canvas && !reducedMotion) {
-    var ctx = canvas.getContext("2d");
-    var particles = [];
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var running = true;
-    var w = 0, h = 0;
-
-    var resize = function () {
-      var rect = canvas.parentElement.getBoundingClientRect();
-      w = rect.width;
-      h = rect.height;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var count = Math.min(90, Math.round(w * h / 16000));
-      particles = [];
-      for (var i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          r: Math.random() * 1.6 + 0.4,
-          vx: (Math.random() - 0.5) * 0.18,
-          vy: (Math.random() - 0.5) * 0.14,
-          a: Math.random() * 0.5 + 0.15
-        });
-      }
-    };
-
-    var tick = function () {
-      if (!running) return;
-      ctx.clearRect(0, 0, w, h);
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < -4) p.x = w + 4; else if (p.x > w + 4) p.x = -4;
-        if (p.y < -4) p.y = h + 4; else if (p.y > h + 4) p.y = -4;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(122, 175, 255," + p.a + ")";
-        ctx.fill();
-      }
-      requestAnimationFrame(tick);
-    };
-
-    resize();
-    window.addEventListener("resize", resize);
-    document.addEventListener("visibilitychange", function () {
-      running = !document.hidden;
-      if (running) requestAnimationFrame(tick);
-    });
-    requestAnimationFrame(tick);
   }
 })();
